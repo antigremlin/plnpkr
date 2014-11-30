@@ -1,0 +1,51 @@
+<template name="play">
+	<div class="container">
+    <div class="page-header">
+      <h1>Planning Pucker: {{playId}}</h1>
+      {{> loginButtons}}
+    </div>
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Users</h2>
+				<ul class="list-group">
+					{{#each votes}}
+					<li class="list-group-item">
+						<span class="badge">{{value}}</span>
+						{{user}}
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+			<div class="col-md-8">
+				<h2>Voting</h2>
+        <div id="vote-value" class="btn-group" data-toggle="buttons">
+          <label class="btn btn-success">
+            <input type="radio" name="options" id="option0" value="0" autocomplete="off"> 0 
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="options" id="option1" value="1" autocomplete="off"> 1 
+          </label>
+          <label class="btn btn-info"> 
+            <input type="radio" name="options" id="option2" value="2" autocomplete="off"> 2 
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="options" id="option3" value="3" autocomplete="off"> 3 
+          </label>
+          <label class="btn btn-warning">
+            <input type="radio" name="options" id="optionCoffee" value="coffee" autocomplete="off">coffee
+          </label>
+        </div>
+        <button id="btn-vote" type="button" class="btn btn-primary">Vote</button>
+        <h2>Stories</h2>
+      	<ul class="list-group">
+      	{{#each stories}}
+      		<li class="list-group-item">
+      			<span class="badge">{{estimate}}</span>
+            {{name}}
+      		</li>
+      	{{/each}}
+      	</ul>
+			</div>
+		</div>
+	</div>
+</template>
