@@ -22,5 +22,9 @@ Template.play.events({
 		} else {
 			Votes.update(prev._id, {$set: {value: val}});
 		}
+	},
+	'click #btn-submit-sp': function(event) {
+		var sp = event.target.estimate.value;
+    Story.update(this._id, {$set: {estimate: sp}});
 	}
 });

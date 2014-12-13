@@ -3,6 +3,7 @@
     <div class="page-header">
       <h1>Planning Pucker: {{playId}}</h1>
       {{> loginButtons}}
+      <a href="/playlist" class="btn btn-danger btn-xs pull-right">Leave this play</a>
     </div>
 		<div class="row">
 			<div class="col-md-4">
@@ -15,7 +16,15 @@
 					</li>
 					{{/each}}
 				</ul>
-			</div>
+    
+        <div class="input-group" id="sp-value">
+          <input type="text" name="estimate" class="form-control" placeholder="sp">
+          <span class="input-group-btn">
+            <button id="btn-submit" class="btn btn-success" type="button">Submit and start Next Story</button>
+          </span>
+        </div>
+      </div>
+          
 			<div class="col-md-8">
 				<h2>Voting</h2>
         <div id="vote-value" class="btn-group" data-toggle="buttons">
@@ -23,16 +32,25 @@
             <input type="radio" name="options" id="option0" value="0" autocomplete="off"> 0 
           </label>
           <label class="btn btn-info">
-            <input type="radio" name="options" id="option1" value="1" autocomplete="off"> 1 
-          </label>
-          <label class="btn btn-info"> 
-            <input type="radio" name="options" id="option2" value="2" autocomplete="off"> 2 
+            <input type="radio" name="options" id="option1/2" value="1/2" autocomplete="off">1/2
           </label>
           <label class="btn btn-info">
-            <input type="radio" name="options" id="option3" value="3" autocomplete="off"> 3 
+            <input type="radio" name="options" id="option1" value="1" autocomplete="off">1
+          </label>
+          <label class="btn btn-info"> 
+            <input type="radio" name="options" id="option2" value="2" autocomplete="off">2
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="options" id="option3" value="3" autocomplete="off">3
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="options" id="option5" value="5" autocomplete="off">5
           </label>
           <label class="btn btn-warning">
             <input type="radio" name="options" id="optionCoffee" value="coffee" autocomplete="off">coffee
+          </label>
+          <label class="btn btn-danger">
+            <input type="radio" name="options" id="optionUnknown" value="?" autocomplete="off">?
           </label>
         </div>
         <button id="btn-vote" type="button" class="btn btn-primary">Vote</button>

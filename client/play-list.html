@@ -7,18 +7,17 @@
 
 	  <form class="form-inline" id="new-play" role="form">
 	  	<div class="form-group">
-				<input type="text" name="name" class="form-control" placeholder="Play name">
+				<input type="text" name="name" class="form-control" placeholder="Play name" autofocus>
 	  	</div>
 			<button type="submit" class="btn btn-success">Start New Play</button>
 	  </form>
 
-	  <h2>Active</h2>
+    <h2>Active</h2>
    	<ul class="list-group">
-   	{{#each plays}}
+   	{{#each activePlays}}
    		<li class="list-group-item">
          {{name}}
          {{id}}
-         <!-- <button type="button" class="btn btn-warning btn-xs pull-right">Join</button> -->
          <a href="/play/{{id}}" class="btn btn-warning btn-xs pull-right">Join</a>
    		</li>
    	{{/each}}
@@ -26,12 +25,14 @@
 
 	  <h2>Finished</h2>
    	<ul class="list-group">
-   	{{#each plays}}
+   	{{#each finishedPlays}}
    		<li class="list-group-item">
          {{name}}
          {{id}}
+        <a href="/play/{{id}}" class="btn btn-default btn-xs pull-right">View Results</a>
    		</li>
    	{{/each}}
    	</ul>
+    
 	</div>
 </template>
